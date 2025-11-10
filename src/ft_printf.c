@@ -10,4 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/ft_printf.h"
 
+int	ft_printf(const char *str, ...)
+{
+	int		count;
+	char	*start;
+	va_list	ap;
+
+	count = 0;
+	va_start(ap, str);
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			
+		}
+		else {
+			count += ft_putchar_fd(*str, 1);
+		}
+		if (*str)
+			str++;
+	}
+	va_end(ap);
+	return (cnt);
+}
