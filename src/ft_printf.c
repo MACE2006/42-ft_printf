@@ -43,3 +43,20 @@ int	ft_printf(const char *str, ...)
 	va_end(ap);
 	return (count);
 }
+
+t_format	pft_new_format(void)
+{
+	t_format	new_form;
+
+	new_form.minus = 0;
+	new_form.plus = 0;
+	new_form.width = 0;
+	new_form.prec = 0;
+	new_form.neg_prec = 0;
+	new_form.zero = 0;
+	new_form.dot = 0;
+	new_form.space = 0;
+	new_form.sharp = 0;
+	new_form.specifier = 0;
+	return (new_form);
+}
