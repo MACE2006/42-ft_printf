@@ -1,45 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   pft_parse.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 13:39:55 by cvorley           #+#    #+#             */
-/*   Updated: 2025/11/10 13:39:56 by cvorley          ###   ########.fr       */
+/*   Created: 2025/11/11 11:44:22 by cvorley           #+#    #+#             */
+/*   Updated: 2025/11/11 11:44:23 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_printf(const char *str, ...)
-{
-	int		count;
-	char	*start;
-	va_list	ap;
 
-	count = 0;
-	va_start(ap, str);
-	while (*str)
-	{
-		if (*str == '%')
-		{
-			start = (char *)str;
-			if (*(++str))
-				count += pft_parse((char *)str, ap);
-			while (*str && !ft_strchr(SPECIFY, *str))
-				str++;
-			if (!(*str))
-				str++;
-		}
-		else
-		{
-			ft_putchar_fd(*str, 1);
-			count++;
-		}
-		if (*str)
-			str++;
-	}
-	va_end(ap);
-	return (count);
+
+int	pft_parse(char *str, va_list ap)
+{
+	t_format	nw_frt;
+
+	nw_frt = pft_parse_width(str, ap, pft_new_format());
+	nw_frt = sm other bs;
+	while (!ft_strchr(SPECIFY, *str) && *str != '.')
+		str++;
+	if (*str == '.' && !nw_frt.specifier)
 }

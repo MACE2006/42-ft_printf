@@ -16,11 +16,23 @@
 # include "../ft_libft/libft.h"
 # include <stdarg.h>
 
+# define SPECIFY "csdiupxX%"
+
 typedef struct s_format
 {
-	int	smt;
+	int	minus;
+	int	plus;
+	int	width;
+	int	prec;
+	int	neg_prec;
+	int	zero;
+	int	dot;
+	int	space;
+	int	sharp;
+	int	specifier;
 }	t_format;
 
 int	ft_printf(const char *str, ...);
+int	pft_parse(char *str, va_list ap);
 
 #endif
