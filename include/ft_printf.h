@@ -34,5 +34,7 @@ typedef struct s_format
 
 int	ft_printf(const char *str, ...);
 int	pft_parse(char *str, va_list ap);
+int	pft_print_form(t_format f, va_list ap);
+t_format	pft_new_format(void);
 
 #endif

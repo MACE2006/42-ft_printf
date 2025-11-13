@@ -36,15 +36,52 @@ static t_format	pft_parse_width(char *str, va_list ap, t_format f)
 	return (f);
 }
 
-static t_format	ft_parse_bullshiti()
+static t_format	pft_pars_precision(char *str, va_list ap, t_format f)
+{
+	int	i;
+
+	i = 0;
+	while (!ft_strchr(SPECIFY, *str))
+	{
+		if ((ft_isdigit(*str) || *str == '*') && !i)
+		{
+			if (*str == '*')
+				f.prec = va_arg(ap, int);
+			else
+			 	f.prec = ft_atoi(str);
+			i = 1;
+		}
+		str++;
+	}
+	return (f);
+}
+
+static t_format	pft_parse_pss(char *str, t_format f)
+{
+	while (*str != '.' && !ft_strchr(SPECIFY, *str))
+	{
+		if (*str == '+')
+			f.plus = 1;
+		if (*str == ' ')
+			f.space = 1;
+		if (*str == '#')
+			f.sharp = 1;
+		str++;
+	}
+	return (f);
+}
 
 int	pft_parse(char *str, va_list ap)
 {
 	t_format	nw_frt;
 
 	nw_frt = pft_parse_width(str, ap, pft_new_format());
-	nw_frt = sm other bs;
+	nw_frt = pft_parse_pss(str, nw_frt);
 	while (!ft_strchr(SPECIFY, *str) && *str != '.')
 		str++;
 	if (*str == '.' && !nw_frt.specifier)
+	{
+
+	}
+	return (pft_print_form((nw_frt, ap));
 }

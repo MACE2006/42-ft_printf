@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <stdio.h>
 
 int	ft_printf(const char *str, ...)
 {
@@ -42,6 +43,16 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(ap);
 	return (count);
+}
+
+int	pft_print_form(t_format f, va_list ap)
+{
+	int	n;
+
+	n = 0;
+	if (f.specifier == 'c' || f.specifier == '%')
+		n = pft_print_c(f, ap);
+	return (n);
 }
 
 t_format	pft_new_format(void)
