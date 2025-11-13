@@ -81,7 +81,17 @@ int	pft_parse(char *str, va_list ap)
 		str++;
 	if (*str == '.' && !nw_frt.specifier)
 	{
-
+		nw_frt.dot = 1;
+		nw_frt = pft_pars_precision(str++, ap, nw_frt);
+		while (!ft_strchr(SPECIFY, *str))
+			str++;
 	}
-	return (pft_print_form((nw_frt, ap));
+	if (nw_frt.width < 0)
+	{
+		nw_frt.minus = 1;
+		nw_frt.width *= -1;
+	}
+	nw_frt.specifier = *str;
+	nw_frt.neg_prec = nw_frt.prec < 0;
+	return (pft_print_form(nw_frt, ap));
 }

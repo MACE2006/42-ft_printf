@@ -52,6 +52,14 @@ int	pft_print_form(t_format f, va_list ap)
 	n = 0;
 	if (f.specifier == 'c' || f.specifier == '%')
 		n = pft_print_c(f, ap);
+	if (f.specifier == 's')
+		n = pft_print_s(f, ap);
+	if (f.specifier == 'd' || f.specifier == 'i' || f.specifier == 'u')
+		n = pft_print_diu(f, ap);
+	if (f.specifier == 'X' || f.specifier == 'x')
+		n = pft_print_x(f, ap);
+	if (f.specifier == 'p')
+		n = pft_print_p(f, ap);
 	return (n);
 }
 

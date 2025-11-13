@@ -14,9 +14,13 @@
 # define FT_PRINTF_H
 
 # include "../ft_libft/libft.h"
+# include <limits.h>
 # include <stdarg.h>
+# include <unistd.h>
 
 # define SPECIFY "csdiupxX%"
+# define HEXLOW "0123456789abcdef"
+# define HEXUP "0123456789ABCDEF"
 
 typedef struct s_format
 {
@@ -32,9 +36,17 @@ typedef struct s_format
 	int	specifier;
 }	t_format;
 
-int	ft_printf(const char *str, ...);
-int	pft_parse(char *str, va_list ap);
-int	pft_print_form(t_format f, va_list ap);
+int			ft_printf(const char *str, ...);
+int			pft_parse(char *str, va_list ap);
+int			pft_print_form(t_format f, va_list ap);
+int			pft_print_c(t_format f, va_list ap);
+int			pft_print_s(t_format f, va_list ap);
+int			pft_print_diu(t_format f, va_list ap);
+int			pft_print_x(t_format f, va_list ap);
+int			pft_print_p(t_format f, va_list ap);
 t_format	pft_new_format(void);
+
+int			pft_putnchar_fd(char c, int fd, int n);
+int			pft_putstrn_fd(char *s, int fd, int n);
 
 #endif
