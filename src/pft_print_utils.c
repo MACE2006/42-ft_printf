@@ -29,3 +29,51 @@ int	pft_putstrn_fd(char *s, int fd, int n)
 		return ((int)write(fd, s, n));
 	return (0);
 }
+
+static char *pft_allo(char *str, int len, unsigned int n, unsigned int n_b)
+{
+	if (n_b == 0)
+		len = 1;
+	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (len-- > 0)
+	{
+		str[len] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (str);
+}
+
+int	pft_nbrlen(unsigned long nbr, unsigned long base)
+{
+	unsigned long	len;
+
+	len = 0;
+	if (!base)
+		base = 10;
+	if (nbr == 0)
+		return (1);
+	while (nbr != 0)
+	{
+		len++;
+		nbr /= base;
+	}
+	return (len);
+}
+
+char	*pft_uitoa(unsigned int n)
+{
+	char			*str;
+	int				len;
+	unsigned int	n_b;
+
+	n_b = n;
+	len = pft_nbrlen(n , 10);
+	str = NULL;
+	str = pft_allo(str, len, n, n_b);
+	if (!str)
+		return (NULL);
+	return (str);
+}

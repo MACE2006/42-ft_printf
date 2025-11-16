@@ -46,7 +46,10 @@ int			pft_print_x(t_format f, va_list ap);
 int			pft_print_p(t_format f, va_list ap);
 t_format	pft_new_format(void);
 
+//util functions
 int			pft_putnchar_fd(char c, int fd, int n);
 int			pft_putstrn_fd(char *s, int fd, int n);
+char		*pft_uitoa(unsigned int n);
+int			pft_nbrlen(unsigned long nbr, unsigned long base);
 
 #endif

@@ -79,3 +79,8 @@ t_format	pft_new_format(void)
 	new_form.specifier = 0;
 	return (new_form);
 }
+
+int	main()
+{
+	ft_printf("%s\n", "idk some bs");
+}

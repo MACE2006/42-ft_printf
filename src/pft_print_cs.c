@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-#include <cstdarg>
 #include <stdlib.h>
 
 int	ft_print_s(t_format f, va_list ap)
