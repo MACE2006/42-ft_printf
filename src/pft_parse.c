@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pft_parse.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cvorley <cvorley@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:44:22 by cvorley           #+#    #+#             */
-/*   Updated: 2025/11/11 11:44:23 by cvorley          ###   ########.fr       */
+/*   Updated: 2025/11/18 11:39:37 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_format	pft_parse_width(char *str, va_list ap, t_format f)
 	{
 		if (*str == '-')
 			f.minus = 1;
-		if (*str == 0 && !ft_isdigit(*(str - 1)))
+		if (*str == '0' && !ft_isdigit(*(str - 1)))
 			f.zero = 1;
 		else if (((*str > '0' && *str <= '9') || *str == '*') && !smt)
 		{

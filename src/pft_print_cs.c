@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pft_parse.c                                        :+:      :+:    :+:   */
+/*   pft_print_cs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cvorley <cvorley@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 11:44:22 by cvorley           #+#    #+#             */
-/*   Updated: 2025/11/11 11:44:23 by cvorley          ###   ########.fr       */
+/*   Updated: 2025/11/17 10:44:01 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 #include <stdlib.h>
 
-int	ft_print_s(t_format f, va_list ap)
+int	pft_print_s(t_format f, va_list ap)
 {
 	char	*str;
 	int		count;

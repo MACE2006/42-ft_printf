@@ -16,22 +16,22 @@
 int	ft_printf(const char *str, ...)
 {
 	int		count;
-	char	*start;
+	char	*safe;
 	va_list	ap;
-
+	
 	count = 0;
 	va_start(ap, str);
 	while (*str)
 	{
 		if (*str == '%')
 		{
-			start = (char *)str;
+			safe = (char *)str;
 			if (*(++str))
 				count += pft_parse((char *)str, ap);
 			while (*str && !ft_strchr(SPECIFY, *str))
 				str++;
 			if (!(*str))
-				str++;
+				str = safe;
 		}
 		else
 		{
@@ -80,7 +80,3 @@ t_format	pft_new_format(void)
 	return (new_form);
 }
 
-int	main()
-{
-	ft_printf("%s\n", "idk some bs");
-}
