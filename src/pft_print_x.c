@@ -54,7 +54,7 @@ int	pft_print_p(t_format f, va_list ap)
 	len *= !(!n && !f.prec && f.dot);
 	if (f.prec < len || !f.dot)
 		f.prec = len;
-	c += write(1, "0x", f.zero);
+	c += write(1, "0x", 2 * f.zero);
 	f.width -= 2;
 	if (!f.minus && f.width > f.prec && !f.dot && f.zero)
 		c += pft_putnchar_fd('0', 1, (f.width - f.prec));
