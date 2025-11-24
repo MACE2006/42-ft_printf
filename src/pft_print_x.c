@@ -25,7 +25,7 @@ static int	pft_hex(t_format f, size_t n, size_t i)
 		if (f.specifier != 'X')
 			ch = HEXLOW[r];
 		else
-		 	ch = HEXUP[r];
+			ch = HEXUP[r];
 		n /= 16;
 		i = 1;
 		c += pft_hex(f, n, i);

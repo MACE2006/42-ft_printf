@@ -62,7 +62,7 @@ int	pft_print_diu(t_format f, va_list ap)
 	if (n < 0 && f.specifier == 'u')
 		nbr = pft_uitoa((unsigned)n);
 	else
-	 	nbr = ft_itoa(n);
+		nbr = ft_itoa(n);
 	len = ft_strlen(nbr);
 	if (*nbr == '0' && !f.prec && f.dot)
 		len = 0;

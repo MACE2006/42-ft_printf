@@ -51,7 +51,7 @@ int	pft_print_c(t_format f, va_list ap)
 	if (f.specifier == 'c')
 		c = va_arg(ap, int);
 	else
-	 	c = '%';
+		c = '%';
 	f.prec = 1;
 	if (!f.minus && f.zero)
 		count += pft_putnchar_fd('0', 1, f.width - f.prec);

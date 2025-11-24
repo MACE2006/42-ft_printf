@@ -30,7 +30,7 @@ int	pft_putstrn_fd(char *s, int fd, int n)
 	return (0);
 }
 
-static char *pft_allo(char *str, int len, unsigned int n, unsigned int n_b)
+static char	*pft_allo(char *str, int len, unsigned int n, unsigned int n_b)
 {
 	if (n_b == 0)
 		len = 1;
@@ -70,7 +70,7 @@ char	*pft_uitoa(unsigned int n)
 	unsigned int	n_b;
 
 	n_b = n;
-	len = pft_nbrlen(n , 10);
+	len = pft_nbrlen(n, 10);
 	str = NULL;
 	str = pft_allo(str, len, n, n_b);
 	if (!str)

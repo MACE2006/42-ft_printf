@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cvorley <cvorley@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 13:39:55 by cvorley           #+#    #+#             */
-/*   Updated: 2025/11/10 13:39:56 by cvorley          ###   ########.fr       */
+/*   Updated: 2025/11/24 13:40:48 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printf(const char *str, ...)
 	int		count;
 	char	*safe;
 	va_list	ap;
-	
+
 	count = 0;
 	va_start(ap, str);
 	while (*str)
@@ -34,10 +34,7 @@ int	ft_printf(const char *str, ...)
 				str = safe;
 		}
 		else
-		{
-			ft_putchar_fd(*str, 1);
-			count++;
-		}
+			count += pft_putnchar_fd(*str, 1, 1);
 		if (*str)
 			str++;
 	}
@@ -79,4 +76,3 @@ t_format	pft_new_format(void)
 	new_form.specifier = 0;
 	return (new_form);
 }
-

@@ -15,7 +15,7 @@
 static t_format	pft_parse_width(char *str, va_list ap, t_format f)
 {
 	int	smt;
-	
+
 	smt = 0;
 	while (*str != '.' && !ft_strchr(SPECIFY, *str))
 	{
@@ -48,7 +48,7 @@ static t_format	pft_pars_precision(char *str, va_list ap, t_format f)
 			if (*str == '*')
 				f.prec = va_arg(ap, int);
 			else
-			 	f.prec = ft_atoi(str);
+				f.prec = ft_atoi(str);
 			i = 1;
 		}
 		str++;
