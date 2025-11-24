@@ -51,9 +51,8 @@ int	pft_print_p(t_format f, va_list ap)
 	c = 0;
 	n = va_arg(ap, size_t);
 	if (!n && !f.dot)
-		write(1, "(nil)", 5);
-	len = pft_nbrlen(n, 16);
-	len *= !(!n && !f.prec && f.dot);
+		return (write(1, "(nil)", 5));
+	len = pft_nbrlen(n, 16) * !(!n && !f.prec && f.dot);
 	if (f.prec < len || !f.dot)
 		f.prec = len;
 	c += write(1, "0x", 2 * f.zero);
